@@ -3,6 +3,7 @@ package com.example.greetingcard
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -11,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.greetingcard.ui.theme.GreetingCardTheme
-
+import androidx.compose.ui.graphics.Color //andorid surface color 문제 해결
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +39,10 @@ class MainActivity : ComponentActivity() {
 // Greeting함수 : 구성가능한 함수 - 몇 가지 입력받아 화면에 표시되는 내용 생성
 fun Greeting(name: String)
 {
-    Text(text = "Hi, my name is $name!")
+    //소재의 배경이나 색상 다르게 설정 - 텍스트를 surface로 둘러싸기
+    Surface(color = Color.Blue) {
+        Text(text = "Hi, my name is $name!")
+    }
 }
 
 //미리보기함수가 되기 위해 추가한 주석
