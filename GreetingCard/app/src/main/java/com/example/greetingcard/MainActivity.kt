@@ -38,14 +38,16 @@ class MainActivity : ComponentActivity() {
 // Greeting함수 : 구성가능한 함수 - 몇 가지 입력받아 화면에 표시되는 내용 생성
 fun Greeting(name: String)
 {
-    //현재 Greeting 함수 : name을 가져와 사용자에게 Hello 표시함
     Text(text = "Hi, my name is $name!")
 }
 
+//미리보기함수가 되기 위해 추가한 주석
+//showBackground가 true로 설정 시, 앱 미리보기에 배경 추가됨
 @Preview(showBackground = true)
 @Composable
+//전체 앱을 빌드 x -> 앱이 어떻게 표시되는지 확인 가능
 fun DefaultPreview() {
     GreetingCardTheme {
-        Greeting("Android")
+        Greeting("Meghan")
     }
 }
