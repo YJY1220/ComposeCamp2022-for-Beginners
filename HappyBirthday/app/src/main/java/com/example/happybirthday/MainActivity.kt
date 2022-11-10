@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.happybirthday.ui.theme.HappyBirthdayTheme
 import androidx.compose.material.Colors
+import androidx.compose.ui.unit.sp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +32,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun BirthdayGreetingWithText(message: String){
     Text(
-        text = message
+        text = message,
+        fontSize = 36.sp
     )
 }
 @Preview(showBackground = false)
