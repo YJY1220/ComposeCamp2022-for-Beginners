@@ -32,7 +32,8 @@ class MainActivity : ComponentActivity() {
             HappyBirthdayTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    BirthdayGreetingWithImage(message = "Happy Birthday Sam!", from = "- from Emma")
+                    BirthdayGreetingWithImage(message = getString(R.string.haapy_birthday_text), from = getString(
+                                            R.string.signature_text))
                 }
             }
         }
