@@ -19,7 +19,10 @@ import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.layout.padding
 
 class MainActivity : ComponentActivity() {
     //emulator apply
@@ -42,11 +45,19 @@ fun BirthdayGreetingWithText(message: String, from: String){
     Column{
         Text(
             text = message,
-            fontSize = 36.sp
+            fontSize = 36.sp,
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentWidth(Alignment.Start)
+                .padding(start = 16.dp, top = 16.dp)
         )
         Text(
             text = from,
-            fontSize = 24.sp
+            fontSize = 24.sp,
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentWidth(Alignment.End)
+                .padding(start = 16.dp, top = 16.dp)
         )
     }
 }
