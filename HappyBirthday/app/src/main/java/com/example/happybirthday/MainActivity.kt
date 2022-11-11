@@ -22,13 +22,14 @@ import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.unit.sp
 
 class MainActivity : ComponentActivity() {
+    //emulator apply
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             HappyBirthdayTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    BirthdayGreetingWithText(message = "Happy Birthday Sam!", from = "- from Emma")
+                    BirthdayGreetingWithImage(message = "Happy Birthday Sam!", from = "- from Emma")
                 }
             }
         }
@@ -60,8 +61,11 @@ fun HappyBirthdayPreview() {
 @Composable
 fun BirthdayGreetingWithImage(message: String, from: String) {
     val image = painterResource(R.drawable.androidparty)
-    Image(
-        painter = image,
-        contentDescription = null
-    )
+    Box {
+        Image(
+            painter = image,
+            contentDescription = null
+        )
+        BirthdayGreetingWithText(message = message, from = from)
+    }
 }
